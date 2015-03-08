@@ -1,0 +1,64 @@
+<h3 ng-class="{true:'legend-header legend-header-team',false: 'legend-header'}[renderAction !== 'learning' && renderAction !== 'library']">{{'LESSONS' | i18n}}</h3>
+<div class="moduleList-wrap module-rating">
+    <ul ng-repeat="module in modulesCompleted | orderBy:sortByCompletedDate():orderByDescending" class="moduleList medals">
+        <li class="learning-child-1"><span style="padding-top: 10px; display: inline-block;" ng-init="assessment = displayAssessment(module);">{{module.module.title|truncate:100}}</span></li>
+        <li class="learning-child-2" ng-show="assessment === 0"><div class="admin-action-wrapper tidy-icons" style="margin-top:5px;"><non-assessment></non-assessment></div></li>
+        <li class="learning-child-2" ng-show="assessment >= 1 && assessment < 80"><div class="admin-action-wrapper tidy-icons" style="margin-top:5px;"><assessment-star score="assessment"></assessment-star></div></li>
+        <li class="learning-child-2" ng-show="assessment >= 80 && assessment < 90"><div class="admin-action-wrapper tidy-icons" style="margin-top:5px;"><assessment-silver score="assessment"></assessment-silver></div></li>
+        <li class="learning-child-2" ng-show="assessment >= 90"><div class="admin-action-wrapper tidy-icons" style="margin-top:5px;"><assessment-gold score="assessment"></assessment-gold></div></li>
+        <li class="learning-child-2 learning-rating">
+            <span class="text-rating">Your rating: </span>
+            <span style="padding-top: 5px; display: inline-block;"><div ng-repeat="rating in ratings">
+                    <ng-rating ng-model="rating.rating" rating="rating.rating" icon-class="rating.iconClass" editable="rating.editableRating" stars-count="rating.starsCount" based-on="rating.basedOn" show-grade="rating.showGrade"></ng-rating>
+            </div></span>
+            <span class="rating-clear"></span>
+        </li>
+    </ul>
+</div>
+
+<style>
+.module-rating .learning-child-1 {
+  width: 40%;
+}
+    
+.module-rating .learning-child-2 {
+  float: left !important;
+  width: 150px;
+}
+    
+.module-rating .learning-rating {
+  margin-left: 10px;
+  margin-right: 20px;
+  width: 190px;  
+}
+
+@media screen and (min-width:920px)
+{
+    .module-rating .learning-rating {
+        float: right !important;
+    }
+}
+
+.module-rating .learning-rating .text-rating {
+  position: relative;
+  top: -8px;
+}
+
+.module-rating .learning-rating i {
+    background: none !important;
+    overflow: visible !important;
+    margin-left: 0px !important;
+    width: auto !important;
+    text-indent:  0% !important;
+}
+    
+.module-rating .rating-clear {
+    background: url("https://csb-dev.csod.com/devtest/diego2/lms/lr11/img/046387fe.css-sprite.png") no-repeat scroll -264px -224px transparent;
+    width: 19px;
+    height:  19px;
+    display: block;
+    float: right;
+    position: relative;
+    top: 6px;
+}
+</style>

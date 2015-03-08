@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LMS-1428</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <div class="table-courses-lessons">
+      <div id="myTabFilter" class="tab-filter">
+        <div class="checkbox unpublished">
+            <input type="checkbox" id="unpublished"/><label for="unpublished"></label> <span>Show Unpublished</span>
+        </div>
+        <div class="checkbox archived">
+            <input type="checkbox" id="archived"/><label for="archived"></label> <span>Show Archived</span>
+        </div>
+      </div>
+
+      <ul id="myTab" class="nav nav-tabs ">
+        <li class="active">
+           <a href="#courses" data-toggle="tab">Courses</a>
+        </li>
+        <li><a href="#lessons" data-toggle="tab">Lessons</a></li>
+      </ul>
+
+      <div id="myTabContent" class="tab-content">
+         <div class="tab-pane active" id="courses">
+            <table class="table-hover table-responsive" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>
+                    <a href="" >Title <span class="glyphicon glyphicon-triangle-top sort"></span></a>
+                  </th>
+                  <th>Description</th>
+                  <th>Bundle</th>
+                  <th>Courses</th>
+                  <th>
+                    <a href="" >Type <span class="glyphicon glyphicon-triangle-top sort"></span></a>
+                  </th>
+                  <th>
+                    <a href="" >State <span class="glyphicon glyphicon-triangle-bottom sort"></span></a>
+                  </th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Communicating Style</td>
+                  <td>Identify your Communication styles</td>
+                  <td>Gold</td>
+                  <td>1</td>
+                  <td>Purchased</td>
+                  <td>Published</td>
+                  <td>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+         </div>
+         <div class="tab-pane" id="lessons"></div>
+      </div>
+    </div>
+
+
+    <style>
+    .table-courses-lessons {
+        margin: 20px;
+        font-size: 15px;
+        background-color: #ecf4f6;
+    }
+
+    .tab-filter {
+      width: 280px;
+      float: right;
+      margin-top: 8px;
+      margin-right: 10px;
+      font-size: 13px;
+      vertical-align: middle;
+    }
+
+    .tab-filter .checkbox {
+      float: left;
+      width: 140px;
+      margin: 0px;
+      text-align: right;
+    }
+
+    /* .checkbox */
+    .table-courses-lessons .checkbox span {
+      position: relative;
+      top: -7px;
+    }
+    .table-courses-lessons .checkbox label {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      position: relative;
+      top: 0;
+      left: 0;
+      border: 2px solid #2e75b4;
+    }
+    .table-courses-lessons .checkbox label:after {
+      content: '';
+      width: 16px;
+      height: 9px;
+      position: absolute;
+      top: 4px;
+      left: 2px;
+      border: 3px solid #2e75b4;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    .table-courses-lessons .checkbox input[type=checkbox] {
+      visibility: hidden;
+    }
+    .table-courses-lessons .checkbox input[type=checkbox]:checked + label:after {
+      opacity: 1;
+    }
+    /* end .checkbox */
+
+    #myTab {
+      border-bottom: 2px solid #2e75b4;
+    }
+
+    #myTab li.active a,
+    #myTab li a:hover {
+      background-color: #2e75b4;
+      color: #fff;
+    }
+    #myTab li a {
+      font-weight: bold;
+      color: #000;
+      border: none;
+      border-radius: 0px;
+      margin: 0px;
+    }
+
+    #myTabContent table {
+      width: 100%;
+    }
+    #myTabContent table th {
+      color: #2e75b4;
+      text-align: left;
+      font-weight: bold;
+      padding: 10px 0px 10px 25px;
+      background-color: #e1eef1;
+    }
+    #myTabContent table th a {
+      float: left;
+    }
+    #myTabContent table th a:hover {
+      text-decoration: none;
+      color: #2e75b4;
+    }
+    #myTabContent table td {
+      color: #000;
+      text-align: left;
+      border-bottom: 1px solid #cedce0;
+      padding: 15px 0px 15px 25px;
+    }
+
+    .tab-content .glyphicon {
+      margin: 0px 3px;
+    }
+    .sort {
+      position: relative;
+      top: 3px;
+    }
+    .table-courses-lessons .glyphicon:hover {
+      color: #2e75b4;
+    }
+    </style>
+
+  </body>
+</html>

@@ -40,43 +40,31 @@
       </ul>
 
       <div id="myTabContent" class="tab-content">
-         <div class="tab-pane active" id="courses">
-            <table class="table-hover table-responsive" cellspacing="0" width="100%">
-              <thead>
-                <tr>
-                  <th>
-                    <a href="" >Title <span class="glyphicon glyphicon-triangle-top sort"></span></a>
-                  </th>
-                  <th>Description</th>
-                  <th>Bundle</th>
-                  <th>Courses</th>
-                  <th>
-                    <a href="" >Type <span class="glyphicon glyphicon-triangle-top sort"></span></a>
-                  </th>
-                  <th>
-                    <a href="" >State <span class="glyphicon glyphicon-triangle-bottom sort"></span></a>
-                  </th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Communicating Style</td>
-                  <td>Identify your Communication styles</td>
-                  <td>Gold</td>
-                  <td>1</td>
-                  <td>Purchased</td>
-                  <td>Published</td>
-                  <td>
+         <div class="tab-pane container-fluid active" id="courses">
+              <div class="row row-heading">
+                  <div class="col-md-2">Title</div>
+                  <div class="col-md-4">Description</div>
+                  <div class="col-md-1">Bundle</div>
+                  <div class="col-md-1">Courses</div>
+                  <div class="col-md-1">Type</div>
+                  <div class="col-md-1">State</div>
+                  <div class="col-md-2">Actions</div>
+              </div>
+              <div class="row">
+                  <div class="col-md-2">Communicating Style</div>
+                  <div class="col-md-4">Identify your Communication styles</div>
+                  <div class="col-md-1">Gold</div>
+                  <div class="col-md-1">1</div>
+                  <div class="col-md-1">Purchased</div>
+                  <div class="col-md-1">Published</div>
+                  <div class="col-md-2">
                     <span class="glyphicon glyphicon-pencil"></span>
                     <span class="glyphicon glyphicon-remove"></span>
                     <span class="glyphicon glyphicon-trash"></span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                  </div>
+              </div>
          </div>
-         <div class="tab-pane" id="lessons"></div>
+         <div class="tab-pane container-fluid" id="lessons"></div>
       </div>
     </div>
 
@@ -145,7 +133,6 @@
     #myTab {
       border-bottom: 2px solid #2e75b4;
     }
-
     #myTab li.active a,
     #myTab li a:hover {
       background-color: #2e75b4;
@@ -158,31 +145,23 @@
       border-radius: 0px;
       margin: 0px;
     }
-
-    #myTabContent table {
-      width: 100%;
-    }
-    #myTabContent table th {
-      color: #2e75b4;
-      text-align: left;
-      font-weight: bold;
-      padding: 10px 0px 10px 25px;
-      background-color: #e1eef1;
-    }
-    #myTabContent table th a {
-      float: left;
-    }
-    #myTabContent table th a:hover {
-      text-decoration: none;
-      color: #2e75b4;
-    }
-    #myTabContent table td {
+    #myTabContent .row {
       color: #000;
       text-align: left;
       border-bottom: 1px solid #cedce0;
-      padding: 15px 0px 15px 25px;
+      padding: 10px 0px 10px 10px;
+    }
+    #myTabContent .row-heading {
+      color: #2e75b4;
+      text-align: left;
+      font-weight: bold;
+      border: none;
+      background-color: #e1eef1;
     }
 
+    #myTabContent .col-courses {
+      text-align: center;
+    }
     .tab-content .glyphicon {
       margin: 0px 3px;
     }
